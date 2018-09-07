@@ -8,7 +8,7 @@ from utils import spoilers
 
 # Define all variables to be used around the script
 description = '''Un bot todo loco 24/7'''
-bot = commands.Bot(command_prefix='~', description=description)
+bot = commands.Bot(command_prefix='--', description=description)
 
 # Setup basic logging for the bot
 logging.basicConfig(level=logging.WARNING)
