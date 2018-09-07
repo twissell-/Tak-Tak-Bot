@@ -2,7 +2,6 @@ import logging
 import os
 import sys
 import traceback
-import time
 
 import discord
 from discord.ext import commands
@@ -61,10 +60,7 @@ async def limpiar(context, number: int):
     await bot.delete_message(context.message)
 
     deleted = await bot.purge_from(context.message.channel, limit=number)
-    notification = await bot.send_message(context.message.channel, 'Borrados {} mensaje(s)'.format(len(deleted)))
-
-    time.sleep(10)
-    await bot.delete_message(notification)
+    await bot.send_message(context.message.channel, 'Borrados {} mensaje(s)'.format(len(deleted)))
 
 
 @bot.command(pass_context=True)
