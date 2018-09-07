@@ -1,8 +1,12 @@
 import requests
 import warnings
 
-def create(text):
-    headers = {'content-type': 'application/x-www-form-urlencoded'}
+
+def execute(text):
+
+    _HEADER = {'content-type': 'application/x-www-form-urlencoded'}
+    _URL = 'https://qbin.io/'
+
     params = {
         'Q': text,
         'E': 0,
@@ -10,12 +14,10 @@ def create(text):
         'R': 0
     }
 
-    url = 'https://qbin.io/'
-
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        response = requests.post(url, data=params, headers=headers, verify=False)
+        response = requests.post(_URL, data=params, headers=_HEADER, verify=False)
 
     if response.status_code == requests.codes.ok:
-        # Everything went fine, print paste URL and Session cookie
         return response.url
+
