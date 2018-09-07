@@ -1,7 +1,5 @@
 import logging
 import os
-import sys
-import traceback
 
 import discord
 from discord.ext import commands
@@ -52,6 +50,15 @@ async def on_command_error(error, context):
     logger.error('Ignoring exception in command {}:'.format(context.command))
 
     logger.error(type(error), error, error.__traceback__)
+
+
+# @bot.command(pass_context=True)
+# async def limpiar(context, number: int):
+#     """Clear a specified number of messages in the chat"""
+#     await bot.delete_message(context.message)
+#
+#     deleted = await bot.purge_from(context.message.channel, limit=number)
+#     await bot.send_message(context.message.channel, 'Borrados {} mensaje(s)'.format(len(deleted)))
 
 
 @bot.command(pass_context=True)
