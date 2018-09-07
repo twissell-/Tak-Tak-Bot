@@ -6,7 +6,7 @@ def get(command_name):
     name = str(command_name)
 
     if name is 'spoiler':
-        return 'Uso: {prefix}spoiler "titulo" "text"\n' \
+        return 'Uso: {prefix}spoiler "titulo" "texto"\n' \
                'Esconde los spoilers para que Saki no se chive.'.format(prefix=command_prefix)
     if name is 'limpiar':
         return 'Uso: {prefix}limpiar N\n' \
